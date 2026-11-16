@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#101827">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="کارت‌بان">
+<link rel="manifest" href="./manifest.webmanifest">
+<link rel="apple-touch-icon" href="./icon.svg">
+<title>کارت‌بان | گاوصندوق کارت‌ها</title>
+<style>
+:root{--bg:#0b1220;--panel:#121d30;--panel2:#18263c;--line:#263751;--txt:#edf3ff;--muted:#91a3bd;--gold:#e8bd72;--gold2:#f6d99e;--red:#ff7c85;--green:#6fe0b2;--shadow:0 18px 55px #0006}
+*{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:radial-gradient(ellipse at 85% -10%,#29466a 0,transparent 38%),radial-gradient(ellipse at -10% 50%,#25213e 0,transparent 34%),var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;min-height:100vh;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
+button,input,textarea,select{font:inherit}button{cursor:pointer}
+.wrap{max-width:760px;margin:auto;padding:18px 16px 40px}
+.top{display:flex;align-items:center;justify-content:space-between;margin:8px 0 22px}.brand{display:flex;align-items:center;gap:12px}.logo{width:44px;height:44px;border-radius:15px;background:linear-gradient(145deg,#f5d79c,#b77b38);display:grid;place-items:center;color:#172033;font-size:22px;box-shadow:0 8px 25px #d6a65b44}.brand h1{font-size:19px;margin:0;letter-spacing:-.4px}.brand small{display:block;color:var(--muted);font-size:11px;margin-top:4px}
+.pill{border:1px solid #3b506d;border-radius:99px;padding:8px 11px;color:#c4d2e8;background:#17253a;font-size:11px}
+.hero{border:1px solid #394a62;border-radius:25px;padding:21px;background:linear-gradient(125deg,#243650,#172338 60%,#312c3d);box-shadow:var(--shadow);position:relative;overflow:hidden;margin-bottom:20px}.hero:after{content:"";position:absolute;width:190px;height:190px;border:1px solid #ffffff12;border-radius:50%;left:-45px;top:-100px;box-shadow:0 0 0 22px #ffffff08,0 0 0 45px #ffffff05}.hero .eyebrow{color:var(--gold2);font-size:11px;letter-spacing:1px}.hero h2{font-size:22px;margin:10px 0 7px}.hero p{margin:0;color:#bdcbe0;font-size:12px;line-height:1.9;max-width:440px}.stats{display:flex;gap:10px;margin-top:17px}.stat{background:#ffffff0b;border:1px solid #ffffff12;border-radius:13px;padding:10px 14px;min-width:90px}.stat b{display:block;font-size:18px}.stat span{font-size:10px;color:#afbed2}
+.toolbar{display:flex;gap:9px;align-items:center;margin:18px 0 14px}.search{flex:1;position:relative}.search input{width:100%;background:#111d30;border:1px solid var(--line);color:var(--txt);border-radius:14px;padding:13px 42px 13px 12px;outline:none}.search:before{content:"⌕";position:absolute;right:15px;top:7px;font-size:25px;color:var(--muted)}.btn{border:0;border-radius:13px;padding:12px 15px;font-weight:700}.primary{background:linear-gradient(135deg,#f2d39a,#c38c4c);color:#172033;box-shadow:0 7px 18px #bd8a4a33}.secondary{background:#1b2a41;color:#dce7f7;border:1px solid #344862}.danger{background:#3a202b;color:#ffb2b8;border:1px solid #63323d}.iconbtn{width:42px;height:42px;padding:0;font-size:19px}
+.sectionhead{display:flex;justify-content:space-between;align-items:center;margin:20px 2px 12px}.sectionhead h3{font-size:14px;margin:0}.sectionhead span{font-size:11px;color:var(--muted)}
+.cards{display:grid;grid-template-columns:1fr;gap:13px}
+.bankcard{border:1px solid #34465f;border-radius:21px;padding:16px;background:linear-gradient(135deg,#1e3049,#152238 70%,#252c40);position:relative;overflow:hidden;box-shadow:0 12px 30px #0003}.bankcard:before{content:"";position:absolute;width:160px;height:160px;border:1px solid #ffffff10;border-radius:50%;left:-45px;bottom:-105px;box-shadow:0 0 0 18px #ffffff05,0 0 0 38px #ffffff04}.cardtop{display:flex;justify-content:space-between;align-items:center;position:relative}.bankname{font-size:14px;font-weight:800}.bankmeta{font-size:10px;color:#b5c4d8;margin-top:4px}.chip{width:34px;height:25px;border-radius:7px;background:linear-gradient(135deg,#e8d6a7,#9d8557);border:1px solid #f4e5bb;opacity:.9}.number{font-size:20px;letter-spacing:2px;direction:ltr;text-align:right;margin:23px 0 18px;font-variant-numeric:tabular-nums;position:relative}.cardbottom{display:flex;justify-content:space-between;gap:8px;position:relative}.fieldlabel{font-size:9px;color:#a9bad0;margin-bottom:5px}.fieldvalue{font-size:12px;font-weight:650;letter-spacing:.2px;overflow-wrap:anywhere}.cardactions{display:flex;gap:7px;margin-top:15px;border-top:1px solid #ffffff13;padding-top:12px}.mini{border:1px solid #ffffff20;background:#ffffff0a;color:#d9e5f6;border-radius:10px;padding:7px 10px;font-size:11px}.mini.del{color:#ffadb4}.empty{padding:35px 18px;text-align:center;border:1px dashed #40516a;border-radius:18px;color:var(--muted);line-height:2;font-size:13px}
+.view{display:none}.view.active{display:block}.backrow{display:flex;align-items:center;gap:10px;margin:4px 0 20px}.backrow h2{font-size:18px;margin:0}.formbox{background:#121f32;border:1px solid var(--line);border-radius:20px;padding:17px;box-shadow:var(--shadow)}.gridform{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;color:#b7c7dc}.field input,.field textarea,.field select{width:100%;background:#0d1828;border:1px solid #30435c;color:var(--txt);border-radius:12px;padding:12px;outline:none;min-width:0}.field input:focus,.field textarea:focus{border-color:var(--gold)}.field textarea{resize:vertical;min-height:70px}.hint{color:var(--muted);font-size:10px;line-height:1.8}.formactions{display:flex;gap:9px;margin-top:17px}.formactions button{flex:1}
+.detailcard{margin-bottom:15px}.detail-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.detailitem{background:#0e1a2b;border:1px solid #293b53;border-radius:13px;padding:12px;min-width:0}.detailitem.full{grid-column:1/-1}.copyhint{font-size:10px;color:#92a6c2;margin:12px 2px 0}
+.overlay{position:fixed;inset:0;background:#050a13dd;display:none;align-items:center;justify-content:center;padding:20px;z-index:20;backdrop-filter:blur(8px)}.overlay.show{display:flex}.modal{width:100%;max-width:420px;background:#17253a;border:1px solid #3a506c;border-radius:24px;padding:24px;box-shadow:0 25px 80px #0009}.modal h2{margin:0 0 8px;font-size:20px}.modal p{color:#aebfd4;font-size:12px;line-height:1.9}.modal input{width:100%;padding:14px;background:#0c1727;border:1px solid #40536e;color:white;border-radius:12px;outline:none;margin:8px 0}.modal .btn{width:100%;margin-top:10px}.warning{color:#ffd28b!important}.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));left:50%;transform:translate(-50%,20px);background:#e9c98f;color:#1a2637;border-radius:99px;padding:10px 17px;font-size:12px;font-weight:800;opacity:0;pointer-events:none;transition:.2s;z-index:50;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
+.settings{display:flex;flex-direction:column;gap:10px}.settingrow{display:flex;justify-content:space-between;align-items:center;gap:15px;background:#111e31;border:1px solid #2d4059;padding:14px;border-radius:14px}.settingrow b{font-size:12px}.settingrow small{display:block;color:var(--muted);font-size:10px;margin-top:4px;line-height:1.6}
+.footer{text-align:center;color:#62758e;font-size:10px;margin:28px 0 4px}
+@media(min-width:620px){.cards{grid-template-columns:1fr 1fr}.wrap{padding-top:25px}.hero{padding:25px}.number{font-size:21px}}
+@media(max-width:380px){.gridform{grid-template-columns:1fr}.field.full{grid-column:auto}.number{font-size:17px}.toolbar .btn{padding:11px}.detail-list{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<header class="top">
+ <div class="brand"><div class="logo">✦</div><div><h1>کارت‌بان</h1><small>گاوصندوق شخصی کارت‌های بانکی</small></div></div>
+ <div class="pill" id="securePill">● فضای رمزگذاری‌شده</div>
+</header>
+
+<section id="homeView" class="view active">
+ <div class="hero">
+  <div class="eyebrow">YOUR PRIVATE WALLET</div>
+  <h2>همه کارت‌ها، یک‌جا و امن.</h2>
+  <p>اطلاعات کارت‌هایت را مرتب نگه دار، سریع پیدا کن و با لمس طولانی هر نوشته، آن را کپی کن.</p>
+  <div class="stats"><div class="stat"><b id="totalCards">۰</b><span>کارت ثبت‌شده</span></div><div class="stat"><b>🔒</b><span>ذخیره روی همین گوشی</span></div></div>
+ </div>
+ <div class="toolbar">
+  <div class="search"><input id="searchInput" type="search" placeholder="جست‌وجوی بانک یا نام دارنده..."></div>
+  <button class="btn primary" id="addBtn">＋ افزودن</button>
+ </div>
+ <div class="sectionhead"><h3>کارت‌های من</h3><span id="shownCount"></span></div>
+ <div id="cardsList" class="cards"></div>
+ <div class="footer">اطلاعات فقط در حافظه مرورگر همین دستگاه نگهداری می‌شود.</div>
+</section>
+
+<section id="formView" class="view">
+ <div class="backrow"><button class="btn secondary iconbtn" data-home>‹</button><h2 id="formTitle">افزودن کارت جدید</h2></div>
+ <div class="formbox">
+  <form id="cardForm">
+   <div class="gridform">
+    <div class="field"><label>نام بانک</label><input id="bank" required placeholder="مثلاً ملت"></div>
+    <div class="field"><label>عنوان دلخواه کارت</label><input id="alias" placeholder="مثلاً کارت خرید"></div>
+    <div class="field full"><label>شماره کارت</label><input id="cardNumber" inputmode="numeric" maxlength="23" placeholder="6037 ـــــ ـــــ ـــــ" required></div>
+    <div class="field"><label>CVV2</label><input id="cvv2" type="password" inputmode="numeric" maxlength="4" autocomplete="off" placeholder="۳ یا ۴ رقم"></div>
+    <div class="field"><label>نام صاحب کارت</label><input id="holder" placeholder="نام و نام خانوادگی"></div>
+    <div class="field"><label>شماره حساب (اختیاری)</label><input id="account" inputmode="numeric" placeholder="شماره حساب"></div>
+    <div class="field full"><label>شماره شبا (اختیاری)</label><input id="sheba" placeholder="IR..."></div>
+    <div class="field"><label>رنگ کارت</label><select id="color"><option value="blue">آبی اقیانوسی</option><option value="gold">طلایی</option><option value="purple">بنفش</option><option value="green">سبز زمردی</option><option value="dark">ذغالی</option></select></div>
+    <div class="field"><label>یادداشت (اختیاری)</label><input id="note" placeholder="مثلاً کارت اصلی"></div>
+    <div class="field full"><div class="hint">CVV2 به‌صورت مخفی و رمزگذاری‌شده ذخیره می‌شود و برای نمایش دوباره رمز اصلی لازم است. نگهداری CVV2 ریسک امنیتی دارد؛ فقط روی گوشی شخصی و قفل‌شده استفاده کن.</div></div>
+   </div>
+   <div class="formactions"><button type="submit" class="btn primary">ذخیره کارت</button><button type="button" class="btn secondary" data-home>انصراف</button></div>
+  </form>
+ </div>
+</section>
+
+<section id="detailView" class="view">
+ <div class="backrow"><button class="btn secondary iconbtn" data-home>‹</button><h2>جزئیات کارت</h2><span style="flex:1"></span><button class="btn secondary" id="detailEdit">ویرایش</button></div>
+ <div id="detailContent"></div>
+ <div class="copyhint">برای کپی هر نوشته، انگشتت را حدود نیم‌ثانیه روی آن نگه دار.</div>
+ <div class="formactions"><button class="btn secondary" id="detailCopyAll">کپی اطلاعات کارت</button><button class="btn danger" id="detailDelete">حذف کارت</button></div>
+</section>
+
+<section id="settingsView" class="view">
+ <div class="backrow"><button class="btn secondary iconbtn" data-home>‹</button><h2>تنظیمات و پشتیبان</h2></div>
+ <div class="formbox settings">
+  <div class="settingrow"><div><b>تغییر رمز ورود</b><small>رمز اصلی گاوصندوق را عوض کن.</small></div><button class="btn secondary" id="changePassBtn">تغییر</button></div>
+  <div class="settingrow"><div><b>خروجی پشتیبان رمزگذاری‌شده</b><small>برای انتقال یا بازیابی اطلاعات، فایل پشتیبان بگیر.</small></div><button class="btn secondary" id="exportBtn">دریافت</button></div>
+  <div class="settingrow"><div><b>بازیابی پشتیبان</b><small>فقط فایل پشتیبان همین برنامه پذیرفته می‌شود.</small></div><button class="btn secondary" id="importBtn">بازیابی</button></div>
+  <input type="file" id="importFile" accept=".json,application/json" hidden>
+  <div class="settingrow"><div><b>قفل کردن برنامه</b><small>برای خروج از گاوصندوق، صفحه را قفل کن.</small></div><button class="btn danger" id="lockBtn">قفل</button></div>
+  <p class="hint">اگر رمز اصلی را فراموش کنی، امکان بازیابی داده‌های رمزگذاری‌شده بدون فایل پشتیبان و رمز درست وجود ندارد. فایل پشتیبان را در جای امن نگه دار.</p>
+ </div>
+</section>
+</div>
+
+<div class="overlay show" id="authOverlay">
+ <div class="modal">
+  <div class="logo" style="margin-bottom:16px">✦</div>
+  <h2 id="authTitle">خوش آمدی</h2>
+  <p id="authDesc">برای ورود به گاوصندوق کارت‌ها، رمز اصلی را وارد کن.</p>
+  <input id="passwordInput" type="password" autocomplete="current-password" placeholder="رمز ورود">
+  <input id="passwordConfirm" type="password" autocomplete="new-password" placeholder="تکرار رمز ورود" style="display:none">
+  <p id="authError" class="warning" style="min-height:18px"></p>
+  <button class="btn primary" id="authBtn">ورود امن</button>
+ </div>
+</div>
+<div class="toast" id="toast"></div>
+
+<script>
+'use strict';
+const $=id=>document.getElementById(id);
+const DB_KEY='cardban_v1_vault', ITER=310000;
+let vault=null, masterKey=null, currentId=null, editingId=null, authMode='unlock', holdTimer=null, holdTriggered=false;
+const enc=new TextEncoder(), dec=new TextDecoder();
+const b64=b=>btoa(String.fromCharCode(...new Uint8Array(b)));
+const un64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
+function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1800)}
+function digits(s){return (s||'').replace(/\D/g,'')}
+function faNum(n){return new Intl.NumberFormat('fa-IR').format(n)}
+function uuid(){return crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2)}
+async function derive(password,salt){
+ const base=await crypto.subtle.importKey('raw',enc.encode(password),'PBKDF2',false,['deriveKey']);
+ return crypto.subtle.deriveKey({name:'PBKDF2',salt,iterations:ITER,hash:'SHA-256'},base,{name:'AES-GCM',length:256},false,['encrypt','decrypt']);
+}
+async function encryptData(data,key=masterKey){
+ const iv=crypto.getRandomValues(new Uint8Array(12));
+ const cipher=await crypto.subtle.encrypt({name:'AES-GCM',iv},key,enc.encode(JSON.stringify(data)));
+ return {iv:b64(iv),cipher:b64(cipher)};
+}
+async function decryptData(record,key){
+ const plain=await crypto.subtle.decrypt({name:'AES-GCM',iv:un64(record.iv)},key,un64(record.cipher));
+ return JSON.parse(dec.decode(plain));
+}
+async function persist(){const encrypted=await encryptData(vault);localStorage.setItem(DB_KEY,JSON.stringify({version:1,salt:window._salt,encrypted}));}
+function showView(name){
+ document.querySelectorAll('.view').forEach(v=>v.classList.remove('active'));
+ $(name+'View').classList.add('active');
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+function maskNumber(n){const d=digits(n);return d.replace(/(\d{4})(?=\d)/g,'$1 ').trim()}
+function copyText(s){if(!s)return;const fallback=()=>{const t=document.createElement('textarea');t.value=s;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');toast('کپی شد ✓')}catch(e){toast('کپی انجام نشد')}t.remove()};
+ if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(s).then(()=>toast('کپی شد ✓')).catch(fallback);else fallback();
+}
+function render(){
+ const q=$('searchInput').value.trim().toLowerCase();
+ const items=vault.cards.filter(c=>(c.bank+' '+c.alias+' '+c.holder+' '+c.cardNumber).toLowerCase().includes(q));
+ $('totalCards').textContent=faNum(vault.cards.length);$('shownCount').textContent=faNum(items.length)+' مورد';
+ $('cardsList').innerHTML=items.length?'':'<div class="empty">هنوز کارتی ثبت نکرده‌ای.<br>با دکمه «افزودن» اولین کارتت را وارد کن.</div>';
+ items.forEach(c=>{
+  const el=document.createElement('article');el.className='bankcard';el.dataset.id=c.id;
+  el.innerHTML=`<div class="cardtop"><div><div class="bankname"></div><div class="bankmeta"></div></div><div class="chip"></div></div>
+   <div class="number" data-copy></div><div class="cardbottom"><div><div class="fieldlabel">صاحب کارت</div><div class="fieldvalue" data-copy></div></div><div style="text-align:left"><div class="fieldlabel">عنوان</div><div class="fieldvalue" data-copy></div></div></div>
+   <div class="cardactions"><button class="mini open">مشاهده جزئیات ←</button><button class="mini edit">ویرایش</button><button class="mini del">حذف</button></div>`;
+  el.querySelector('.bankname').textContent=c.bank;
+  el.querySelector('.bankmeta').textContent=c.alias||'کارت بانکی';
+  el.querySelector('.number').textContent=maskNumber(c.cardNumber);
+  el.querySelectorAll('.fieldvalue')[0].textContent=c.holder||'ثبت نشده';
+  el.querySelectorAll('.fieldvalue')[1].textContent=c.alias||c.bank;
+  const palettes={blue:['#284b6b','#14243a'],gold:['#72552e','#33291f'],purple:['#594174','#26213b'],green:['#286354','#172e32'],dark:['#444a56','#1b202b']};
+  const p=palettes[c.color]||palettes.blue;el.style.background=`linear-gradient(130deg,${p[0]},${p[1]} 72%,#252c40)`;
+  el.querySelector('.open').onclick=()=>openDetail(c.id);el.querySelector('.edit').onclick=()=>openForm(c.id);el.querySelector('.del').onclick=()=>deleteCard(c.id);
+  el.querySelectorAll('[data-copy]').forEach(n=>n.dataset.copyValue=n.textContent);
+  $('cardsList').appendChild(el);
+ });
+}
+function openForm(id=null){
+ editingId=id;const c=id?vault.cards.find(x=>x.id===id):null;
+ $('formTitle').textContent=c?'ویرایش کارت':'افزودن کارت جدید';
+ ['bank','alias','cardNumber','cvv2','holder','account','sheba','color','note'].forEach(k=>$(k).value=c?(c[k]||''):(k==='color'?'blue':''));
+ showView('form');
+}
+$('cardForm').addEventListener('submit',async e=>{
+ e.preventDefault();const data={bank:$('bank').value.trim(),alias:$('alias').value.trim(),cardNumber:digits($('cardNumber').value),cvv2:digits($('cvv2').value),holder:$('holder').value.trim(),account:$('account').value.trim(),sheba:$('sheba').value.trim().toUpperCase().replace(/\s/g,''),color:$('color').value,note:$('note').value.trim()};
+ if(data.cardNumber.length<12||data.cardNumber.length>19){toast('شماره کارت را درست وارد کن');return}
+ if(data.cvv2 && !/^\\d{3,4}$/.test(data.cvv2)){toast('CVV2 باید ۳ یا ۴ رقم باشد');return}
+ if(data.sheba && !/^IR[0-9]{24}$/.test(data.sheba)){toast('شماره شبا باید با IR و ۲۴ رقم وارد شود');return}
+ if(editingId){const i=vault.cards.findIndex(x=>x.id===editingId);vault.cards[i]={...vault.cards[i],...data};}
+ else vault.cards.unshift({id:uuid(),...data,createdAt:Date.now()});
+ await persist();render();showView('home');toast('اطلاعات ذخیره شد');
+});
+function openDetail(id){
+ currentId=id;const c=vault.cards.find(x=>x.id===id);if(!c)return;
+ const fields=[['بانک',c.bank],['عنوان کارت',c.alias],['شماره کارت',maskNumber(c.cardNumber)],['صاحب کارت',c.holder],['شماره حساب',c.account],['شماره شبا',c.sheba],['یادداشت',c.note]];
+ $('detailContent').innerHTML=`<div class="bankcard detailcard"><div class="cardtop"><div><div class="bankname"></div><div class="bankmeta">CARD DETAILS · PRIVATE</div></div><div class="chip"></div></div><div class="number" data-copy></div></div><div class="detail-list"></div><div class="detailitem full" style="margin-top:10px"><div class="fieldlabel">CVV2 · اطلاعات حساس</div><div style="display:flex;align-items:center;justify-content:space-between;gap:10px"><div class="fieldvalue" id="cvvDisplay" style="letter-spacing:3px">••••</div><button class="mini" id="revealCvv">نمایش با رمز اصلی</button></div><div class="hint" style="margin-top:8px">CVV2 در فهرست کارت‌ها و کپی یک‌جای اطلاعات نمایش داده نمی‌شود.</div></div>`;
+ $('detailContent').querySelector('.bankname').textContent=c.bank;$('detailContent').querySelector('.number').textContent=maskNumber(c.cardNumber);
+ const list=$('detailContent').querySelector('.detail-list');
+ fields.forEach(([label,value])=>{if(!value)return;const d=document.createElement('div');d.className='detailitem'+(label==='شماره کارت'||label==='شماره شبا'||label==='یادداشت'?' full':'');d.innerHTML='<div class="fieldlabel"></div><div class="fieldvalue" data-copy></div>';d.querySelector('.fieldlabel').textContent=label;d.querySelector('.fieldvalue').textContent=value;d.querySelector('.fieldvalue').dataset.copyValue=value;list.appendChild(d)});
+ $('detailContent').querySelector('.number').dataset.copyValue=c.cardNumber;
+ const revealBtn=$('revealCvv'), cvvDisplay=$('cvvDisplay');
+ if(!c.cvv2){cvvDisplay.textContent='ثبت نشده';revealBtn.textContent='—';revealBtn.disabled=true;}
+ else {
+  let hideTimer=null;
+  const hideCvv=()=>{cvvDisplay.textContent='••••';delete cvvDisplay.dataset.copyValue;revealBtn.textContent='نمایش با رمز اصلی';};
+  revealBtn.onclick=async()=>{
+   if(cvvDisplay.textContent!=='••••'){hideCvv();clearTimeout(hideTimer);return;}
+   const pass=prompt('برای نمایش CVV2، رمز اصلی گاوصندوق را دوباره وارد کن:');
+   if(pass===null)return;
+   try{
+    const saved=JSON.parse(localStorage.getItem(DB_KEY));
+    const checkKey=await derive(pass,un64(saved.salt));
+    await decryptData(saved.encrypted,checkKey);
+    cvvDisplay.textContent=c.cvv2;cvvDisplay.dataset.copyValue=c.cvv2;
+    revealBtn.textContent='پنهان کردن';clearTimeout(hideTimer);hideTimer=setTimeout(hideCvv,15000);
+   }catch(e){toast('رمز اصلی اشتباه است');}
+  };
+ }
+ showView('detail');
+}
+$('detailEdit').onclick=()=>openForm(currentId);
+$('detailDelete').onclick=()=>deleteCard(currentId);
+$('detailCopyAll').onclick=()=>{const c=vault.cards.find(x=>x.id===currentId);if(c)copyText([c.bank,c.alias,c.cardNumber,c.holder,c.account,c.sheba,c.note].filter(Boolean).join('\n'))};
+async function deleteCard(id){if(!confirm('این کارت برای همیشه از حافظه برنامه حذف شود؟'))return;vault.cards=vault.cards.filter(c=>c.id!==id);await persist();render();showView('home');toast('کارت حذف شد')}
+$('addBtn').onclick=()=>openForm();$('searchInput').addEventListener('input',render);
+document.querySelectorAll('[data-home]').forEach(b=>b.onclick=()=>{render();showView('home')});
+$('settingsView');
+const settingsButton=document.createElement('button');settingsButton.className='pill';settingsButton.textContent='⚙ تنظیمات';settingsButton.style.marginTop='14px';settingsButton.onclick=()=>showView('settings');$('homeView').appendChild(settingsButton);
+
+function setupAuth(mode){authMode=mode;$('authError').textContent='';$('passwordInput').value='';$('passwordConfirm').value='';$('passwordConfirm').style.display=mode==='create'?'block':'none';$('authTitle').textContent=mode==='create'?'ساخت گاوصندوق امن':'خوش آمدی';$('authDesc').textContent=mode==='create'?'یک رمز قوی انتخاب کن. این رمز کلید رمزگشایی اطلاعات توست.':'برای ورود به گاوصندوق کارت‌ها، رمز اصلی را وارد کن.';$('authBtn').textContent=mode==='create'?'ساخت گاوصندوق':'ورود امن';$('authOverlay').classList.add('show')}
+async function unlock(){
+ const pass=$('passwordInput').value;
+ if(pass.length<8){$('authError').textContent='رمز باید حداقل ۸ کاراکتر داشته باشد.';return}
+ try{
+  if(authMode==='create'){
+   if(pass!==$('passwordConfirm').value){$('authError').textContent='تکرار رمز با رمز اصلی یکسان نیست.';return}
+   const salt=crypto.getRandomValues(new Uint8Array(16));window._salt=b64(salt);masterKey=await derive(pass,salt);vault={cards:[]};await persist();
+  }else{
+   const saved=JSON.parse(localStorage.getItem(DB_KEY));window._salt=saved.salt;masterKey=await derive(pass,un64(saved.salt));vault=await decryptData(saved.encrypted,masterKey);
+  }
+  $('authOverlay').classList.remove('show');$('passwordInput').value='';render();toast('گاوصندوق باز شد');
+ }catch(e){masterKey=null;vault=null;$('authError').textContent='رمز اشتباه است یا اطلاعات پشتیبان آسیب دیده.'}
+}
+$('authBtn').onclick=unlock;$('passwordInput').addEventListener('keydown',e=>{if(e.key==='Enter')unlock()});
+function lock(){masterKey=null;vault=null;currentId=null;setupAuth('unlock')}
+$('lockBtn').onclick=lock;
+$('changePassBtn').onclick=async()=>{
+ const old=prompt('رمز فعلی را وارد کن:');if(old===null)return;
+ try{const saved=JSON.parse(localStorage.getItem(DB_KEY));const key=await derive(old,un64(saved.salt));await decryptData(saved.encrypted,key);
+ const next=prompt('رمز جدید (حداقل ۸ کاراکتر):');if(!next||next.length<8){toast('رمز جدید معتبر نیست');return}
+ const again=prompt('رمز جدید را دوباره وارد کن:');if(next!==again){toast('رمزها یکسان نیستند');return}
+ const salt=crypto.getRandomValues(new Uint8Array(16));window._salt=b64(salt);masterKey=await derive(next,salt);await persist();toast('رمز با موفقیت تغییر کرد');
+ }catch(e){toast('رمز فعلی اشتباه است')}
+};
+$('exportBtn').onclick=()=>{
+ const data=localStorage.getItem(DB_KEY);if(!data){toast('پشتیبانی برای دریافت وجود ندارد');return}
+ const blob=new Blob([JSON.stringify({app:'CardBan',version:1,backup:JSON.parse(data)},null,2)],{type:'application/json'});
+ const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='cardban-backup-'+new Date().toISOString().slice(0,10)+'.json';a.click();URL.revokeObjectURL(a.href);toast('فایل پشتیبان آماده شد');
+};
+$('importBtn').onclick=()=>$('importFile').click();
+$('importFile').onchange=async e=>{
+ const file=e.target.files[0];if(!file)return;
+ try{const obj=JSON.parse(await file.text());if(obj.app!=='CardBan'||!obj.backup?.encrypted)throw 0;
+ if(!confirm('با بازیابی، اطلاعات فعلی جایگزین می‌شود. ادامه می‌دهی؟'))return;
+ localStorage.setItem(DB_KEY,JSON.stringify(obj.backup));lock();toast('پشتیبان وارد شد؛ با رمز همان پشتیبان وارد شو');
+ }catch(err){toast('فایل پشتیبان معتبر نیست')}e.target.value='';
+};
+
+// Long press on card-related text copies it. A tap still behaves normally.
+document.addEventListener('pointerdown',e=>{
+ const target=e.target.closest('[data-copy],[data-copy-value]');if(!target)return;
+ holdTriggered=false;holdTimer=setTimeout(()=>{holdTriggered=true;copyText(target.dataset.copyValue||target.textContent.trim())},520);
+});
+['pointerup','pointercancel','pointerleave'].forEach(ev=>document.addEventListener(ev,()=>clearTimeout(holdTimer)));
+document.addEventListener('contextmenu',e=>{if(e.target.closest('[data-copy],[data-copy-value]'))e.preventDefault()});
+document.addEventListener('click',e=>{if(holdTriggered){e.preventDefault();e.stopPropagation();holdTriggered=false}},true);
+
+if(!window.crypto?.subtle){$('authDesc').textContent='برای امنیت رمزگذاری، برنامه باید از طریق HTTPS (مانند GitHub Pages) باز شود.';$('authBtn').disabled=true}
+if(!localStorage.getItem(DB_KEY))setupAuth('create');else setupAuth('unlock');
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+</script>
+</body>
+</html>
