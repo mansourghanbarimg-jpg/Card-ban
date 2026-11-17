@@ -8,7 +8,8 @@
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="کارت‌بان">
 <link rel="manifest" href="./manifest.webmanifest">
-<link rel="apple-touch-icon" href="./icon.svg">
+<link rel="apple-touch-icon" sizes="180x180" href="./icon-180.png">
+<link rel="icon" type="image/png" sizes="192x192" href="./icon-192.png">
 <title>کارت‌بان نسخه ۳ | گاوصندوق کارت‌ها</title>
 <style>
 :root{--bg:#0b1220;--panel:#121d30;--panel2:#18263c;--line:#263751;--txt:#edf3ff;--muted:#91a3bd;--gold:#e8bd72;--gold2:#f6d99e;--red:#ff7c85;--green:#6fe0b2;--shadow:0 18px 55px #0006}
@@ -21,9 +22,9 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}
 .toolbar{display:flex;gap:9px;align-items:center;margin:18px 0 14px}.search{flex:1;position:relative}.search input{width:100%;background:#111d30;border:1px solid var(--line);color:var(--txt);border-radius:14px;padding:13px 42px 13px 12px;outline:none}.search:before{content:"⌕";position:absolute;right:15px;top:7px;font-size:25px;color:var(--muted)}.btn{border:0;border-radius:13px;padding:12px 15px;font-weight:700}.primary{background:linear-gradient(135deg,#f2d39a,#c38c4c);color:#172033;box-shadow:0 7px 18px #bd8a4a33}.secondary{background:#1b2a41;color:#dce7f7;border:1px solid #344862}.danger{background:#3a202b;color:#ffb2b8;border:1px solid #63323d}.iconbtn{width:42px;height:42px;padding:0;font-size:19px}
 .sectionhead{display:flex;justify-content:space-between;align-items:center;margin:20px 2px 12px}.sectionhead h3{font-size:14px;margin:0}.sectionhead span{font-size:11px;color:var(--muted)}
 .cards{display:grid;grid-template-columns:1fr;gap:13px}
-.bankcard{border:1px solid #34465f;border-radius:21px;padding:16px;background:linear-gradient(135deg,#1e3049,#152238 70%,#252c40);position:relative;overflow:hidden;box-shadow:0 12px 30px #0003}.bankcard:before{content:"";position:absolute;width:160px;height:160px;border:1px solid #ffffff10;border-radius:50%;left:-45px;bottom:-105px;box-shadow:0 0 0 18px #ffffff05,0 0 0 38px #ffffff04;pointer-events:none}.bankcard:after{content:"";position:absolute;z-index:0;left:0;right:0;top:76px;height:3px;background:linear-gradient(90deg,transparent,var(--card-stripe,#ffffffd9) 18%,var(--card-stripe,#ffffffa8) 78%,transparent);opacity:.78;pointer-events:none}.bankcard>*{position:relative;z-index:1}.bankcard .cardactions{position:relative;z-index:2}.cardtop{display:flex;justify-content:space-between;align-items:center;position:relative}.bankname{font-size:14px;font-weight:800}.bankcard .bankmeta,.bankcard .fieldlabel{color:var(--card-muted,#b5c4d8)}.bankmeta{font-size:10px;color:#b5c4d8;margin-top:4px}.chip{width:34px;height:25px;border-radius:7px;background:linear-gradient(135deg,#e8d6a7,#9d8557);border:1px solid #f4e5bb;opacity:.9}.number{font-size:20px;letter-spacing:2px;direction:ltr;unicode-bidi:isolate;text-align:left;margin:23px 0 18px;font-variant-numeric:tabular-nums;position:relative}.cardbottom{display:flex;justify-content:space-between;gap:8px;position:relative}.fieldlabel{font-size:9px;color:#a9bad0;margin-bottom:5px}.fieldvalue{font-size:12px;font-weight:650;letter-spacing:.2px;overflow-wrap:anywhere}.cardactions{display:flex;gap:7px;margin-top:15px;border-top:1px solid #ffffff13;padding-top:12px}.mini{border:1px solid #ffffff20;background:#ffffff0a;color:#d9e5f6;border-radius:10px;padding:7px 10px;font-size:11px}.mini.del{color:#ffadb4}.empty{padding:35px 18px;text-align:center;border:1px dashed #40516a;border-radius:18px;color:var(--muted);line-height:2;font-size:13px}
+.bankcard{border:1px solid #34465f;border-radius:21px;padding:16px;background:linear-gradient(135deg,#1e3049,#152238 70%,#252c40);position:relative;overflow:hidden;box-shadow:0 12px 30px #0003}.bankcard:before{content:"";position:absolute;width:160px;height:160px;border:1px solid #ffffff10;border-radius:50%;left:-45px;bottom:-105px;box-shadow:0 0 0 18px #ffffff05,0 0 0 38px #ffffff04;pointer-events:none}.bankcard:after{content:"";position:absolute;z-index:0;left:0;right:0;top:50px;height:2px;background:linear-gradient(90deg,transparent,#ffffff 14%,#ffffff 86%,transparent);opacity:.92;box-shadow:0 1px 3px #0005;pointer-events:none}.bankcard>*{position:relative;z-index:1}.bankcard .cardactions{position:relative;z-index:2}.bankcard .mini{color:var(--card-ink,#f0f4fa);border-color:var(--card-border,#ffffff35);background:var(--card-button-bg,#ffffff12)}.bankcard .mini.del{color:var(--card-danger,#ffadb4)}.cardtop{display:flex;justify-content:space-between;align-items:center;position:relative}.bankname{font-size:14px;font-weight:800}.bankcard .bankmeta,.bankcard .fieldlabel{color:var(--card-muted,#b5c4d8)}.bankmeta{font-size:10px;color:#b5c4d8;margin-top:4px}.chip{width:34px;height:25px;border-radius:7px;background:linear-gradient(135deg,#e8d6a7,#9d8557);border:1px solid #f4e5bb;opacity:.9}.number{font-size:20px;letter-spacing:2px;direction:ltr;unicode-bidi:isolate;text-align:left;margin:25px 0 18px;font-variant-numeric:tabular-nums;position:relative}.cardbottom{display:flex;justify-content:space-between;gap:8px;position:relative}.fieldlabel{font-size:9px;color:#a9bad0;margin-bottom:5px}.fieldvalue{font-size:12px;font-weight:650;letter-spacing:.2px;overflow-wrap:anywhere}.cardactions{display:flex;gap:7px;margin-top:15px;border-top:1px solid #ffffff13;padding-top:12px}.mini{border:1px solid #ffffff20;background:#ffffff0a;color:#d9e5f6;border-radius:10px;padding:7px 10px;font-size:11px}.mini.del{color:#ffadb4}.empty{padding:35px 18px;text-align:center;border:1px dashed #40516a;border-radius:18px;color:var(--muted);line-height:2;font-size:13px}
 .view{display:none}.view.active{display:block}.backrow{display:flex;align-items:center;gap:10px;margin:4px 0 20px}.backrow h2{font-size:18px;margin:0}.formbox{background:#121f32;border:1px solid var(--line);border-radius:20px;padding:17px;box-shadow:var(--shadow)}.gridform{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;color:#b7c7dc}.field input,.field textarea,.field select{width:100%;background:#0d1828;border:1px solid #30435c;color:var(--txt);border-radius:12px;padding:12px;outline:none;min-width:0}.field input:focus,.field textarea:focus{border-color:var(--gold)}.field textarea{resize:vertical;min-height:70px}.hint{color:var(--muted);font-size:10px;line-height:1.8}.formactions{display:flex;gap:9px;margin-top:17px}.formactions button{flex:1}
-.detailcard{margin-bottom:15px}.detailcard .number{text-align:left;direction:ltr;unicode-bidi:isolate}.colorchange{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.colorchange select{flex:1;min-width:145px;background:#0d1828;border:1px solid #30435c;color:var(--txt);border-radius:10px;padding:10px}.detail-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.detailitem{background:#0e1a2b;border:1px solid #293b53;border-radius:13px;padding:12px;min-width:0}.detailitem.full{grid-column:1/-1}.copyhint{font-size:10px;color:#92a6c2;margin:12px 2px 0}
+.detailcard{margin-bottom:15px}.bankcard.glass-card{backdrop-filter:blur(14px) saturate(135%);-webkit-backdrop-filter:blur(14px) saturate(135%);border-color:#ffffff75;box-shadow:inset 0 1px 0 #ffffff55,0 12px 30px #0004}.detailcard .number{text-align:left;direction:ltr;unicode-bidi:isolate}.colorchange{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.colorchange select{flex:1;min-width:145px;background:#0d1828;border:1px solid #30435c;color:var(--txt);border-radius:10px;padding:10px}.detail-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.detailitem{background:#0e1a2b;border:1px solid #293b53;border-radius:13px;padding:12px;min-width:0}.detailitem.full{grid-column:1/-1}.copyhint{font-size:10px;color:#92a6c2;margin:12px 2px 0}
 .overlay{position:fixed;inset:0;background:#050a13dd;display:none;align-items:center;justify-content:center;padding:20px;z-index:20;backdrop-filter:blur(8px)}.overlay.show{display:flex}.modal{width:100%;max-width:420px;background:#17253a;border:1px solid #3a506c;border-radius:24px;padding:24px;box-shadow:0 25px 80px #0009}.modal h2{margin:0 0 8px;font-size:20px}.modal p{color:#aebfd4;font-size:12px;line-height:1.9}.modal input{width:100%;padding:14px;background:#0c1727;border:1px solid #40536e;color:white;border-radius:12px;outline:none;margin:8px 0}.modal .btn{width:100%;margin-top:10px}.warning{color:#ffd28b!important}.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));left:50%;transform:translate(-50%,20px);background:#e9c98f;color:#1a2637;border-radius:99px;padding:10px 17px;font-size:12px;font-weight:800;opacity:0;pointer-events:none;transition:.2s;z-index:50;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
 .settings{display:flex;flex-direction:column;gap:10px}.settingrow{display:flex;justify-content:space-between;align-items:center;gap:15px;background:#111e31;border:1px solid #2d4059;padding:14px;border-radius:14px}.settingrow b{font-size:12px}.settingrow small{display:block;color:var(--muted);font-size:10px;margin-top:4px;line-height:1.6}
 .footer{text-align:center;color:#62758e;font-size:10px;margin:28px 0 4px}
@@ -141,16 +142,26 @@ const COLORS=[
  ['whitegold','سفید طلایی',['#f5eee0','#c6a76e','#897044']],
  ['whiteblack','سفید مشکی',['#f5f5f6','#d7d9dd','#a5a9b0']],
  ['blackgold','مشکی طلایی',['#393027','#171514','#a17a3f']],
- ['whiteblue','سفید آبی',['#f1f7fb','#c9ddea','#9bb9cc']]
+ ['whiteblue','سفید آبی',['#f1f7fb','#c9ddea','#9bb9cc']],
+ ['glassblue','شیشه‌ای آبی',['rgba(117,190,230,.48)','rgba(45,105,150,.38)','rgba(20,55,85,.42)']],
+ ['glasssmoke','شیشه‌ای دودی',['rgba(190,200,212,.42)','rgba(88,101,119,.42)','rgba(35,43,56,.48)']],
+ ['glassice','شیشه‌ای یخی',['rgba(235,247,255,.62)','rgba(165,205,228,.42)','rgba(100,145,175,.38)']]
 ];
 function colorOptions(selected='blue'){
  return COLORS.map(([value,label])=>`<option value="${value}" ${value===selected?'selected':''}>${label}</option>`).join('');
 }
 function applyCardColor(el,color){
  const item=COLORS.find(x=>x[0]===color)||COLORS[0],p=item[2];
+ const glass=color.startsWith('glass');
+ const light=['white','cream','whitegold','whiteblack','whiteblue','gray','sky','pink','glassice'].includes(color);
  el.style.background=`linear-gradient(130deg,${p[0]},${p[1]} 68%,${p[2]})`;
- const light=['white','cream','whitegold','whiteblack','whiteblue'].includes(color);
- el.style.color=light?'#202938':'#f0f4fa';el.style.setProperty('--card-muted',light?'#4e5a69':'#c0cede');el.style.setProperty('--card-stripe',light?'#66717d':'#ffffffd9');
+ el.style.color=light?'#202938':'#f7f9fd';
+ el.style.setProperty('--card-ink',light?'#202938':'#f7f9fd');
+ el.style.setProperty('--card-muted',light?'#354253':'#e0e8f3');
+ el.style.setProperty('--card-border',light?'#25364a55':'#ffffff45');
+ el.style.setProperty('--card-button-bg',light?'#ffffff70':'#00000020');
+ el.style.setProperty('--card-danger',light?'#9c2636':'#ffd0d4');
+ el.classList.toggle('glass-card',glass);
  el.dataset.palette=color;
 }
 function faNum(n){return new Intl.NumberFormat('fa-IR').format(n)}
@@ -186,11 +197,10 @@ function render(){
  $('cardsList').innerHTML=items.length?'':'<div class="empty">هنوز کارتی ثبت نکرده‌ای.<br>با دکمه «افزودن» اولین کارتت را وارد کن.</div>';
  items.forEach(c=>{
   const el=document.createElement('article');el.className='bankcard';el.dataset.id=c.id;
-  el.innerHTML=`<div class="cardtop"><div><div class="bankname"></div><div class="bankmeta"></div></div><div class="chip"></div></div>
+  el.innerHTML=`<div class="cardtop"><div><div class="bankname"></div></div><div class="chip"></div></div>
    <div class="number" data-copy></div><div class="cardbottom"><div><div class="fieldlabel">صاحب کارت</div><div class="fieldvalue" data-copy></div></div><div style="text-align:left"><div class="fieldlabel">عنوان</div><div class="fieldvalue" data-copy></div></div></div>
    <div class="cardactions"><button class="mini open">مشاهده جزئیات ←</button><button class="mini edit">ویرایش</button><button class="mini del">حذف</button></div>`;
   el.querySelector('.bankname').textContent=c.bank;
-  el.querySelector('.bankmeta').textContent=c.alias||'کارت بانکی';
   el.querySelector('.number').textContent=maskNumber(c.cardNumber);
   el.querySelectorAll('.fieldvalue')[0].textContent=c.holder||'ثبت نشده';
   el.querySelectorAll('.fieldvalue')[1].textContent=c.alias||c.bank;
