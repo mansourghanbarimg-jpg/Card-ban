@@ -9,7 +9,7 @@
 <meta name="apple-mobile-web-app-title" content="کارت‌بان">
 <link rel="manifest" href="./manifest.webmanifest">
 <link rel="apple-touch-icon" href="./icon.svg">
-<title>کارت‌بان | گاوصندوق کارت‌ها</title>
+<title>کارت‌بان نسخه ۳ | گاوصندوق کارت‌ها</title>
 <style>
 :root{--bg:#0b1220;--panel:#121d30;--panel2:#18263c;--line:#263751;--txt:#edf3ff;--muted:#91a3bd;--gold:#e8bd72;--gold2:#f6d99e;--red:#ff7c85;--green:#6fe0b2;--shadow:0 18px 55px #0006}
 *{box-sizing:border-box}html{background:var(--bg)}body{margin:0;background:radial-gradient(ellipse at 85% -10%,#29466a 0,transparent 38%),radial-gradient(ellipse at -10% 50%,#25213e 0,transparent 34%),var(--bg);color:var(--txt);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Tahoma,sans-serif;min-height:100vh;padding:env(safe-area-inset-top) 0 env(safe-area-inset-bottom)}
@@ -21,9 +21,9 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}
 .toolbar{display:flex;gap:9px;align-items:center;margin:18px 0 14px}.search{flex:1;position:relative}.search input{width:100%;background:#111d30;border:1px solid var(--line);color:var(--txt);border-radius:14px;padding:13px 42px 13px 12px;outline:none}.search:before{content:"⌕";position:absolute;right:15px;top:7px;font-size:25px;color:var(--muted)}.btn{border:0;border-radius:13px;padding:12px 15px;font-weight:700}.primary{background:linear-gradient(135deg,#f2d39a,#c38c4c);color:#172033;box-shadow:0 7px 18px #bd8a4a33}.secondary{background:#1b2a41;color:#dce7f7;border:1px solid #344862}.danger{background:#3a202b;color:#ffb2b8;border:1px solid #63323d}.iconbtn{width:42px;height:42px;padding:0;font-size:19px}
 .sectionhead{display:flex;justify-content:space-between;align-items:center;margin:20px 2px 12px}.sectionhead h3{font-size:14px;margin:0}.sectionhead span{font-size:11px;color:var(--muted)}
 .cards{display:grid;grid-template-columns:1fr;gap:13px}
-.bankcard{border:1px solid #34465f;border-radius:21px;padding:16px;background:linear-gradient(135deg,#1e3049,#152238 70%,#252c40);position:relative;overflow:hidden;box-shadow:0 12px 30px #0003}.bankcard:before{content:"";position:absolute;width:160px;height:160px;border:1px solid #ffffff10;border-radius:50%;left:-45px;bottom:-105px;box-shadow:0 0 0 18px #ffffff05,0 0 0 38px #ffffff04}.cardtop{display:flex;justify-content:space-between;align-items:center;position:relative}.bankname{font-size:14px;font-weight:800}.bankmeta{font-size:10px;color:#b5c4d8;margin-top:4px}.chip{width:34px;height:25px;border-radius:7px;background:linear-gradient(135deg,#e8d6a7,#9d8557);border:1px solid #f4e5bb;opacity:.9}.number{font-size:20px;letter-spacing:2px;direction:ltr;text-align:right;margin:23px 0 18px;font-variant-numeric:tabular-nums;position:relative}.cardbottom{display:flex;justify-content:space-between;gap:8px;position:relative}.fieldlabel{font-size:9px;color:#a9bad0;margin-bottom:5px}.fieldvalue{font-size:12px;font-weight:650;letter-spacing:.2px;overflow-wrap:anywhere}.cardactions{display:flex;gap:7px;margin-top:15px;border-top:1px solid #ffffff13;padding-top:12px}.mini{border:1px solid #ffffff20;background:#ffffff0a;color:#d9e5f6;border-radius:10px;padding:7px 10px;font-size:11px}.mini.del{color:#ffadb4}.empty{padding:35px 18px;text-align:center;border:1px dashed #40516a;border-radius:18px;color:var(--muted);line-height:2;font-size:13px}
+.bankcard{border:1px solid #34465f;border-radius:21px;padding:16px;background:linear-gradient(135deg,#1e3049,#152238 70%,#252c40);position:relative;overflow:hidden;box-shadow:0 12px 30px #0003}.bankcard:before{content:"";position:absolute;width:160px;height:160px;border:1px solid #ffffff10;border-radius:50%;left:-45px;bottom:-105px;box-shadow:0 0 0 18px #ffffff05,0 0 0 38px #ffffff04;pointer-events:none}.bankcard:after{content:"";position:absolute;z-index:0;left:0;right:0;top:76px;height:3px;background:linear-gradient(90deg,transparent,var(--card-stripe,#ffffffd9) 18%,var(--card-stripe,#ffffffa8) 78%,transparent);opacity:.78;pointer-events:none}.bankcard>*{position:relative;z-index:1}.bankcard .cardactions{position:relative;z-index:2}.cardtop{display:flex;justify-content:space-between;align-items:center;position:relative}.bankname{font-size:14px;font-weight:800}.bankcard .bankmeta,.bankcard .fieldlabel{color:var(--card-muted,#b5c4d8)}.bankmeta{font-size:10px;color:#b5c4d8;margin-top:4px}.chip{width:34px;height:25px;border-radius:7px;background:linear-gradient(135deg,#e8d6a7,#9d8557);border:1px solid #f4e5bb;opacity:.9}.number{font-size:20px;letter-spacing:2px;direction:ltr;unicode-bidi:isolate;text-align:left;margin:23px 0 18px;font-variant-numeric:tabular-nums;position:relative}.cardbottom{display:flex;justify-content:space-between;gap:8px;position:relative}.fieldlabel{font-size:9px;color:#a9bad0;margin-bottom:5px}.fieldvalue{font-size:12px;font-weight:650;letter-spacing:.2px;overflow-wrap:anywhere}.cardactions{display:flex;gap:7px;margin-top:15px;border-top:1px solid #ffffff13;padding-top:12px}.mini{border:1px solid #ffffff20;background:#ffffff0a;color:#d9e5f6;border-radius:10px;padding:7px 10px;font-size:11px}.mini.del{color:#ffadb4}.empty{padding:35px 18px;text-align:center;border:1px dashed #40516a;border-radius:18px;color:var(--muted);line-height:2;font-size:13px}
 .view{display:none}.view.active{display:block}.backrow{display:flex;align-items:center;gap:10px;margin:4px 0 20px}.backrow h2{font-size:18px;margin:0}.formbox{background:#121f32;border:1px solid var(--line);border-radius:20px;padding:17px;box-shadow:var(--shadow)}.gridform{display:grid;grid-template-columns:1fr 1fr;gap:12px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font-size:11px;color:#b7c7dc}.field input,.field textarea,.field select{width:100%;background:#0d1828;border:1px solid #30435c;color:var(--txt);border-radius:12px;padding:12px;outline:none;min-width:0}.field input:focus,.field textarea:focus{border-color:var(--gold)}.field textarea{resize:vertical;min-height:70px}.hint{color:var(--muted);font-size:10px;line-height:1.8}.formactions{display:flex;gap:9px;margin-top:17px}.formactions button{flex:1}
-.detailcard{margin-bottom:15px}.detail-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.detailitem{background:#0e1a2b;border:1px solid #293b53;border-radius:13px;padding:12px;min-width:0}.detailitem.full{grid-column:1/-1}.copyhint{font-size:10px;color:#92a6c2;margin:12px 2px 0}
+.detailcard{margin-bottom:15px}.detailcard .number{text-align:left;direction:ltr;unicode-bidi:isolate}.colorchange{display:flex;gap:9px;align-items:center;flex-wrap:wrap}.colorchange select{flex:1;min-width:145px;background:#0d1828;border:1px solid #30435c;color:var(--txt);border-radius:10px;padding:10px}.detail-list{display:grid;grid-template-columns:1fr 1fr;gap:10px}.detailitem{background:#0e1a2b;border:1px solid #293b53;border-radius:13px;padding:12px;min-width:0}.detailitem.full{grid-column:1/-1}.copyhint{font-size:10px;color:#92a6c2;margin:12px 2px 0}
 .overlay{position:fixed;inset:0;background:#050a13dd;display:none;align-items:center;justify-content:center;padding:20px;z-index:20;backdrop-filter:blur(8px)}.overlay.show{display:flex}.modal{width:100%;max-width:420px;background:#17253a;border:1px solid #3a506c;border-radius:24px;padding:24px;box-shadow:0 25px 80px #0009}.modal h2{margin:0 0 8px;font-size:20px}.modal p{color:#aebfd4;font-size:12px;line-height:1.9}.modal input{width:100%;padding:14px;background:#0c1727;border:1px solid #40536e;color:white;border-radius:12px;outline:none;margin:8px 0}.modal .btn{width:100%;margin-top:10px}.warning{color:#ffd28b!important}.toast{position:fixed;bottom:calc(20px + env(safe-area-inset-bottom));left:50%;transform:translate(-50%,20px);background:#e9c98f;color:#1a2637;border-radius:99px;padding:10px 17px;font-size:12px;font-weight:800;opacity:0;pointer-events:none;transition:.2s;z-index:50;white-space:nowrap}.toast.show{opacity:1;transform:translate(-50%,0)}
 .settings{display:flex;flex-direction:column;gap:10px}.settingrow{display:flex;justify-content:space-between;align-items:center;gap:15px;background:#111e31;border:1px solid #2d4059;padding:14px;border-radius:14px}.settingrow b{font-size:12px}.settingrow small{display:block;color:var(--muted);font-size:10px;margin-top:4px;line-height:1.6}
 .footer{text-align:center;color:#62758e;font-size:10px;margin:28px 0 4px}
@@ -66,7 +66,7 @@ button,input,textarea,select{font:inherit}button{cursor:pointer}
     <div class="field"><label>نام صاحب کارت</label><input id="holder" placeholder="نام و نام خانوادگی"></div>
     <div class="field"><label>شماره حساب (اختیاری)</label><input id="account" inputmode="numeric" placeholder="شماره حساب"></div>
     <div class="field full"><label>شماره شبا (اختیاری)</label><input id="sheba" placeholder="IR..."></div>
-    <div class="field"><label>رنگ کارت</label><select id="color"><option value="blue">آبی اقیانوسی</option><option value="gold">طلایی</option><option value="purple">بنفش</option><option value="green">سبز زمردی</option><option value="dark">ذغالی</option></select></div>
+    <div class="field"><label>رنگ کارت</label><select id="color"></select></div>
     <div class="field"><label>یادداشت (اختیاری)</label><input id="note" placeholder="مثلاً کارت اصلی"></div>
     <div class="field full"><div class="hint">CVV2 به‌صورت مخفی و رمزگذاری‌شده ذخیره می‌شود و برای نمایش دوباره رمز اصلی لازم است. نگهداری CVV2 ریسک امنیتی دارد؛ فقط روی گوشی شخصی و قفل‌شده استفاده کن.</div></div>
    </div>
@@ -117,7 +117,42 @@ const enc=new TextEncoder(), dec=new TextDecoder();
 const b64=b=>btoa(String.fromCharCode(...new Uint8Array(b)));
 const un64=s=>Uint8Array.from(atob(s),c=>c.charCodeAt(0));
 function toast(s){$('toast').textContent=s;$('toast').classList.add('show');setTimeout(()=>$('toast').classList.remove('show'),1800)}
-function digits(s){return (s||'').replace(/\D/g,'')}
+function normalizeDigits(s){
+ return String(s??'').replace(/[۰-۹٠-٩]/g,ch=>{
+  const code=ch.charCodeAt(0);
+  return String(code>=0x06F0&&code<=0x06F9?code-0x06F0:code-0x0660);
+ });
+}
+function digits(s){return normalizeDigits(s).replace(/[^0-9]/g,'')}
+const COLORS=[
+ ['blue','آبی اقیانوسی',['#284b6b','#14243a','#252c40']],
+ ['gold','طلایی',['#8a6938','#49351f','#30251c']],
+ ['purple','بنفش',['#694b86','#302342','#231c35']],
+ ['green','سبز زمردی',['#28745f','#163b35','#142b2c']],
+ ['dark','ذغالی',['#555d69','#252b35','#171d27']],
+ ['red','قرمز',['#a83e49','#5c202b','#351a25']],
+ ['gray','طوسی',['#858d99','#454d59','#2b3039']],
+ ['sky','آبی آسمانی',['#5b9fc6','#285b7e','#1c3c59']],
+ ['black','مشکی',['#33363d','#111318','#080a0e']],
+ ['pink','صورتی',['#c77e9d','#75435f','#42283c']],
+ ['magenta','سرخابی',['#b83f91','#642253','#38172f']],
+ ['white','سفید',['#f4f5f7','#c9d0d9','#aeb8c6']],
+ ['cream','کرمی',['#e8d7b8','#b9a17a','#766448']],
+ ['whitegold','سفید طلایی',['#f5eee0','#c6a76e','#897044']],
+ ['whiteblack','سفید مشکی',['#f5f5f6','#d7d9dd','#a5a9b0']],
+ ['blackgold','مشکی طلایی',['#393027','#171514','#a17a3f']],
+ ['whiteblue','سفید آبی',['#f1f7fb','#c9ddea','#9bb9cc']]
+];
+function colorOptions(selected='blue'){
+ return COLORS.map(([value,label])=>`<option value="${value}" ${value===selected?'selected':''}>${label}</option>`).join('');
+}
+function applyCardColor(el,color){
+ const item=COLORS.find(x=>x[0]===color)||COLORS[0],p=item[2];
+ el.style.background=`linear-gradient(130deg,${p[0]},${p[1]} 68%,${p[2]})`;
+ const light=['white','cream','whitegold','whiteblack','whiteblue'].includes(color);
+ el.style.color=light?'#202938':'#f0f4fa';el.style.setProperty('--card-muted',light?'#4e5a69':'#c0cede');el.style.setProperty('--card-stripe',light?'#66717d':'#ffffffd9');
+ el.dataset.palette=color;
+}
 function faNum(n){return new Intl.NumberFormat('fa-IR').format(n)}
 function uuid(){return crypto.randomUUID?crypto.randomUUID():Date.now().toString(36)+Math.random().toString(36).slice(2)}
 async function derive(password,salt){
@@ -139,10 +174,11 @@ function showView(name){
  $(name+'View').classList.add('active');
  window.scrollTo({top:0,behavior:'smooth'});
 }
-function maskNumber(n){const d=digits(n);return d.replace(/(\d{4})(?=\d)/g,'$1 ').trim()}
+function maskNumber(n){const d=digits(n);return d.match(/.{1,4}/g)?.join(' ')||''}
 function copyText(s){if(!s)return;const fallback=()=>{const t=document.createElement('textarea');t.value=s;t.style.position='fixed';t.style.opacity='0';document.body.appendChild(t);t.select();try{document.execCommand('copy');toast('کپی شد ✓')}catch(e){toast('کپی انجام نشد')}t.remove()};
  if(navigator.clipboard&&window.isSecureContext)navigator.clipboard.writeText(s).then(()=>toast('کپی شد ✓')).catch(fallback);else fallback();
 }
+$('color').innerHTML=colorOptions('blue');
 function render(){
  const q=$('searchInput').value.trim().toLowerCase();
  const items=vault.cards.filter(c=>(c.bank+' '+c.alias+' '+c.holder+' '+c.cardNumber).toLowerCase().includes(q));
@@ -158,8 +194,7 @@ function render(){
   el.querySelector('.number').textContent=maskNumber(c.cardNumber);
   el.querySelectorAll('.fieldvalue')[0].textContent=c.holder||'ثبت نشده';
   el.querySelectorAll('.fieldvalue')[1].textContent=c.alias||c.bank;
-  const palettes={blue:['#284b6b','#14243a'],gold:['#72552e','#33291f'],purple:['#594174','#26213b'],green:['#286354','#172e32'],dark:['#444a56','#1b202b']};
-  const p=palettes[c.color]||palettes.blue;el.style.background=`linear-gradient(130deg,${p[0]},${p[1]} 72%,#252c40)`;
+  applyCardColor(el,c.color);
   el.querySelector('.open').onclick=()=>openDetail(c.id);el.querySelector('.edit').onclick=()=>openForm(c.id);el.querySelector('.del').onclick=()=>deleteCard(c.id);
   el.querySelectorAll('[data-copy]').forEach(n=>n.dataset.copyValue=n.textContent);
   $('cardsList').appendChild(el);
@@ -172,9 +207,9 @@ function openForm(id=null){
  showView('form');
 }
 $('cardForm').addEventListener('submit',async e=>{
- e.preventDefault();const data={bank:$('bank').value.trim(),alias:$('alias').value.trim(),cardNumber:digits($('cardNumber').value),cvv2:digits($('cvv2').value),holder:$('holder').value.trim(),account:$('account').value.trim(),sheba:$('sheba').value.trim().toUpperCase().replace(/\s/g,''),color:$('color').value,note:$('note').value.trim()};
+ e.preventDefault();const data={bank:$('bank').value.trim(),alias:$('alias').value.trim(),cardNumber:digits($('cardNumber').value),cvv2:digits($('cvv2').value),holder:$('holder').value.trim(),account:$('account').value.trim(),sheba:normalizeDigits($('sheba').value).trim().toUpperCase().replace(/\s/g,''),color:$('color').value,note:$('note').value.trim()};
  if(data.cardNumber.length<12||data.cardNumber.length>19){toast('شماره کارت را درست وارد کن');return}
- if(data.cvv2 && !/^\\d{3,4}$/.test(data.cvv2)){toast('CVV2 باید ۳ یا ۴ رقم باشد');return}
+ if(data.cvv2 && !/^\d{3,4}$/.test(data.cvv2)){toast('CVV2 باید ۳ یا ۴ رقم باشد');return}
  if(data.sheba && !/^IR[0-9]{24}$/.test(data.sheba)){toast('شماره شبا باید با IR و ۲۴ رقم وارد شود');return}
  if(editingId){const i=vault.cards.findIndex(x=>x.id===editingId);vault.cards[i]={...vault.cards[i],...data};}
  else vault.cards.unshift({id:uuid(),...data,createdAt:Date.now()});
@@ -183,11 +218,18 @@ $('cardForm').addEventListener('submit',async e=>{
 function openDetail(id){
  currentId=id;const c=vault.cards.find(x=>x.id===id);if(!c)return;
  const fields=[['بانک',c.bank],['عنوان کارت',c.alias],['شماره کارت',maskNumber(c.cardNumber)],['صاحب کارت',c.holder],['شماره حساب',c.account],['شماره شبا',c.sheba],['یادداشت',c.note]];
- $('detailContent').innerHTML=`<div class="bankcard detailcard"><div class="cardtop"><div><div class="bankname"></div><div class="bankmeta">CARD DETAILS · PRIVATE</div></div><div class="chip"></div></div><div class="number" data-copy></div></div><div class="detail-list"></div><div class="detailitem full" style="margin-top:10px"><div class="fieldlabel">CVV2 · اطلاعات حساس</div><div style="display:flex;align-items:center;justify-content:space-between;gap:10px"><div class="fieldvalue" id="cvvDisplay" style="letter-spacing:3px">••••</div><button class="mini" id="revealCvv">نمایش با رمز اصلی</button></div><div class="hint" style="margin-top:8px">CVV2 در فهرست کارت‌ها و کپی یک‌جای اطلاعات نمایش داده نمی‌شود.</div></div>`;
+ $('detailContent').innerHTML=`<div class="bankcard detailcard"><div class="cardtop"><div><div class="bankname"></div><div class="bankmeta">CARD DETAILS · PRIVATE</div></div><div class="chip"></div></div><div class="number" data-copy dir="ltr"></div></div><div class="detail-list"></div><div class="detailitem full"><div class="fieldlabel">تغییر رنگ کارت</div><div class="colorchange"><select id="detailColor" aria-label="رنگ کارت">${colorOptions(c.color||'blue')}</select><button class="btn secondary" id="saveCardColor">اعمال رنگ</button></div></div><div class="detailitem full" style="margin-top:10px"><div class="fieldlabel">CVV2 · اطلاعات حساس</div><div style="display:flex;align-items:center;justify-content:space-between;gap:10px"><div class="fieldvalue" id="cvvDisplay" style="letter-spacing:3px">••••</div><button class="mini" id="revealCvv">نمایش با رمز اصلی</button></div><div class="hint" style="margin-top:8px">CVV2 در فهرست کارت‌ها و کپی یک‌جای اطلاعات نمایش داده نمی‌شود.</div></div>`;
  $('detailContent').querySelector('.bankname').textContent=c.bank;$('detailContent').querySelector('.number').textContent=maskNumber(c.cardNumber);
+ const detailCard=$('detailContent').querySelector('.detailcard');
+ applyCardColor(detailCard,c.color);
+ $('saveCardColor').onclick=async()=>{
+  const selected=$('detailColor').value;
+  const card=vault.cards.find(x=>x.id===currentId);if(!card)return;
+  card.color=selected;await persist();applyCardColor(detailCard,selected);render();toast('رنگ کارت تغییر کرد');
+ };
  const list=$('detailContent').querySelector('.detail-list');
  fields.forEach(([label,value])=>{if(!value)return;const d=document.createElement('div');d.className='detailitem'+(label==='شماره کارت'||label==='شماره شبا'||label==='یادداشت'?' full':'');d.innerHTML='<div class="fieldlabel"></div><div class="fieldvalue" data-copy></div>';d.querySelector('.fieldlabel').textContent=label;d.querySelector('.fieldvalue').textContent=value;d.querySelector('.fieldvalue').dataset.copyValue=value;list.appendChild(d)});
- $('detailContent').querySelector('.number').dataset.copyValue=c.cardNumber;
+ $('detailContent').querySelector('.number').dataset.copyValue=digits(c.cardNumber);
  const revealBtn=$('revealCvv'), cvvDisplay=$('cvvDisplay');
  if(!c.cvv2){cvvDisplay.textContent='ثبت نشده';revealBtn.textContent='—';revealBtn.disabled=true;}
  else {
@@ -201,7 +243,7 @@ function openDetail(id){
     const saved=JSON.parse(localStorage.getItem(DB_KEY));
     const checkKey=await derive(pass,un64(saved.salt));
     await decryptData(saved.encrypted,checkKey);
-    cvvDisplay.textContent=c.cvv2;cvvDisplay.dataset.copyValue=c.cvv2;
+    cvvDisplay.textContent=digits(c.cvv2);cvvDisplay.dataset.copyValue=digits(c.cvv2);
     revealBtn.textContent='پنهان کردن';clearTimeout(hideTimer);hideTimer=setTimeout(hideCvv,15000);
    }catch(e){toast('رمز اصلی اشتباه است');}
   };
@@ -210,7 +252,7 @@ function openDetail(id){
 }
 $('detailEdit').onclick=()=>openForm(currentId);
 $('detailDelete').onclick=()=>deleteCard(currentId);
-$('detailCopyAll').onclick=()=>{const c=vault.cards.find(x=>x.id===currentId);if(c)copyText([c.bank,c.alias,c.cardNumber,c.holder,c.account,c.sheba,c.note].filter(Boolean).join('\n'))};
+$('detailCopyAll').onclick=()=>{const c=vault.cards.find(x=>x.id===currentId);if(c)copyText([c.bank,c.alias,digits(c.cardNumber),c.holder,c.account,c.sheba,c.note].filter(Boolean).join('\n'))};
 async function deleteCard(id){if(!confirm('این کارت برای همیشه از حافظه برنامه حذف شود؟'))return;vault.cards=vault.cards.filter(c=>c.id!==id);await persist();render();showView('home');toast('کارت حذف شد')}
 $('addBtn').onclick=()=>openForm();$('searchInput').addEventListener('input',render);
 document.querySelectorAll('[data-home]').forEach(b=>b.onclick=()=>{render();showView('home')});
@@ -267,7 +309,7 @@ document.addEventListener('click',e=>{if(holdTriggered){e.preventDefault();e.sto
 
 if(!window.crypto?.subtle){$('authDesc').textContent='برای امنیت رمزگذاری، برنامه باید از طریق HTTPS (مانند GitHub Pages) باز شود.';$('authBtn').disabled=true}
 if(!localStorage.getItem(DB_KEY))setupAuth('create');else setupAuth('unlock');
-if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{}));
+if('serviceWorker' in navigator && location.protocol.startsWith('http'))window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js',{updateViaCache:'none'}).then(reg=>reg.update()).catch(()=>{}));
 </script>
 </body>
 </html>
